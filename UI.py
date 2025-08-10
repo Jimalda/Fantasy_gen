@@ -350,42 +350,448 @@ def character_card(data):
             padding=15
         )
     )
-possible_duo_events={
-    "Blood Oath": {"desc": "A sacred vow between two characters. The two instantly become Close Friends and each gain 1 new power.","rarity": "Very Rare"},
-    "Sworn enemies": {"desc": "Two characters meet and become enemies after an intense battle. They each get +1 Strength","rarity": "Rare"},
-    "Mentorship": {"desc": "Two characters who do not have a bad relationship will teach the other and each gain +1 on the other's best stat.","rarity": "Uncommon"},
-    "Betrayal": {"desc": "One character betrays the other, leading to both of them becSoming enemies. The betrayed loses 1 charisma and the betrayer gains +1 wisdom.","rarity": "Very Rare"},
-    "Birth of rivalry": {"desc": "Two characters who have a neutral relationship will become rivals. They each gain +1 Agility and +1 Strength.","rarity": "Uncommon"},
-    "Victory over enemy": {"desc": "Two enemies fight. The victor gains +1 in a random stat and the loser gets -1 in a random stat.","rarity": "Common"},
-    "New Friend":{"desc":"Two characters hit it off well and become friends when they meet. +1 Charisma well.","rarity": "Uncommon"},
-    "Cover my back":{"desc":"Two characters with a bad relationship fight against a common enemy and win. They become friends and gain +2 in Endurance.","rarity":"Very Rare"},
-    "Twin Blessing":{"desc":"Two characters who are close friends gain a shared blessing, each receiving +1 to all of their best stat.","rarity":" Extremely Rare"},
-    "Weapon Trade":{"desc":"Two characters agree to trade weapons. They switch weapons permanently","rarity":"Very Rare"},
-    "Power Mentorship":{"desc":"Two characters who are close friends will mentor each other, each learning one power from the other","rarity":"Very Rare"},
-    "Power Rivalry":{"desc":"Two characters who are rivals will try to outdo each other, each gaining +1 in Endurance and Resistance.","rarity":"Rare"},
-    "Aether Crusade":{"desc":"Two characters who have not met embark on a quest to harness the power of Aether. Each gains +1 Aether and a new power. They become Friends.","rarity":"Very Rare"}
+
+possible_duo_events = {
+    "Blood Oath": {
+        "desc": "A sacred vow between two characters. The two instantly become Close Friends and each gain 1 new power.",
+        "rarity": "Very Rare",
+        "effects": {
+            "relationships": [{"type": "Close Friend", "target": "other"}],
+            "powers": ["Power from event"]
+        }
+    },
+    "Sworn enemies": {
+        "desc": "Two characters meet and become enemies after an intense battle. They each get +1 Strength",
+        "rarity": "Rare",
+        "effects": {
+            "relationships": [{"type": "Enemy", "target": "other"}],
+            "stats": {"strength": 1}
+        }
+    },
+    "Mentorship": {
+        "desc": "The Solarian Sensei puts two characters together to teach the other and each gain +1 on the other's best stat.",
+        "rarity": "Uncommon",
+        "effects": {
+            "special": "mentorship"
+        }
+    },
+    "Betrayal": {
+        "desc": "One character betrays the other, leading to both of them becoming enemies. The betrayed loses 1 charisma and the betrayer gains +1 wisdom.",
+        "rarity": "Very Rare",
+        "effects": {
+            "relationships": [{"type": "Enemy", "target": "other"}],
+            "special": "betrayal"  # handled in code
+        }
+    },
+    "Birth of rivalry": {
+        "desc": "During a tournament, two characters fight a fierce battle. Their relationship will become rivals. They each gain +1 Agility and +1 Strength.",
+        "rarity": "Uncommon",
+        "effects": {
+            "relationships": [{"type": "Rival", "target": "other"}],
+            "stats": {"agility": 1, "strength": 1}
+        }
+    },
+    "Victory over enemy": {
+        "desc": "Two characters fight. The victor gains +1 in a random stat and the loser gets -1 in a random stat.",
+        "rarity": "Common",
+        "effects": {
+            "special": "enemy_victory"
+        }
+    },
+    "New Friend": {
+        "desc": "Two characters hit it off well and become friends when they meet. +1 Charisma.",
+        "rarity": "Uncommon",
+        "effects": {
+            "relationships": [{"type": "Friend", "target": "other"}],
+            "stats": {"charisma": 1}
+        }
+    },
+    "Cover my back": {
+        "desc": "Two characters fight against a common enemy and win. They become friends and gain +2 Endurance.",
+        "rarity": "Very Rare",
+        "effects": {
+            "relationships": [{"type": "Friend", "target": "other"}],
+            "stats": {"endurance": 2}
+        }
+    },
+    "Twin Blessing": {
+        "desc": "Two characters gain a shared blessing, each receiving +1 to all of their best stat.",
+        "rarity": "Extremely Rare",
+        "effects": {
+            "special": "twin_blessing"
+        }
+    },
+    "Weapon Trade": {
+        "desc": "Two characters agree to trade weapons. They switch weapons permanently.",
+        "rarity": "Very Rare",
+        "effects": {
+            "special": "weapon_trade"
+        }
+    },
+    "Power Mentorship": {
+        "desc": "Two characters will mentor each other, each learning one power from the other.",
+        "rarity": "Very Rare",
+        "effects": {
+            "special": "power_mentorship"
+        }
+    },
+    "Power Rivalry": {
+        "desc": "Two characters will try to outdo each other, each gaining +1 in Endurance and Resistance.",
+        "rarity": "Rare",
+        "effects": {
+            "stats": {"endurance": 1, "resistance": 1}
+        }
+    },
+    "Aether Crusade": {
+        "desc": "Two characters embark on a quest to harness the power of Aether. Each gains +1 Aether and a new power. They become Friends.",
+        "rarity": "Very Rare",
+        "effects": {
+            "relationships": [{"type": "Friend", "target": "other"}],
+            "stats": {"aether": 1},
+            "powers": ["Power from event"]
+        }
+    }
 }
-possible_single_event={
-    "Merkarian Boulder Lifting":{"desc":"The character trains using the Merkarian technique to lift heavy boulders, gaining +2 Strength.","rarity":"Common"},
-    "Saturnian Aerobatics":{"desc":"The character learns to perform incredible Saturn-style aerial maneuvers, gaining +2 Agility.","rarity":"Common"},
-    "Neptune Waterfall Focus":{"desc":"The character focuses on the cascading waters of Neptune, gaining +2 Endurance.","rarity":"Common"},
-    "Lunar Aether Dance":{"desc":"The character learns to harness the power of the moon, gaining +2 Aether.","rarity":"Common"},
-    "Jupiter Library Study":{"desc":"The character studies ancient texts in the Jupiter Library, gaining +2 Intelligence.","rarity":"Common"},
-    "Mars Wisdom Program":{"desc":"The character participates in the Mars Wisdom Program, gaining +2 Wisdom.","rarity":"Common"},
-    "Watch a Plutonian movie":{"desc":"The character watches a classic Plutonian film, gaining +2 Charisma.","rarity":"Common"},
-    "Venus Lava Trial":{"desc":"The character undergoes the Venus Lava Trial, gaining +2 Resistance.","rarity":"Common"},
-    "All-around Earth Training":{"desc":"The character engages in a comprehensive training regimen on Earth, gaining +1 to all stats.","rarity":"Uncommon"},
-    "Arm Injury":{"desc":"The character sustains an arm injury, resulting in -1 Strength and -1 Agility.","rarity":"Uncommon"},
-    "Leg Injury":{"desc":"The character sustains a leg injury, resulting in -1 Agility and -1 Endurance.","rarity":"Uncommon"},
-    "Back Injury":{"desc":"The character sustains a back injury, resulting in -1 Strength and -1 Endurance.","rarity":"Uncommon"},
-    "Ionian Dancing Class":{"desc":"The character takes a dancing class, gaining +1 Agility and +1 Charisma.","rarity":"Uncommon"},
-    "Meditation Retreat":{"desc":"The character attends a meditation retreat, gaining +1 Wisdom and +1 Aether.","rarity":"Uncommon"},
-    "Tritonian Chess Boxing":{"desc":"The character participates in chess boxing, gaining +1 Strength and +1 Intelligence.","rarity":"Uncommon"},
-    "Ganymedan Mental Fortitude Training":{"desc":"The character undergoes rigorous mental training, gaining +1 Wisdom and +1 Intelligence.","rarity":"Uncommon"},
-    "Chronic Headache":{"desc":"The character suffers from a chronic headache, resulting in -1 Intelligence and -1 Wisdom.","rarity":"Uncommon"},
-    "Romantic Rejection":{"desc":"The character experiences a romantic rejection, resulting in -1 Charisma and -1 Aether.","rarity":"Uncommon"},
-    "Food Poisoning":{"desc":"The character suffers from food poisoning, resulting in -1 Endurance and -1 Resistance.","rarity":"Uncommon"}
+
+possible_single_event = {
+    "Merkarian Boulder Lifting": {
+        "desc": "The character trains using the Merkarian technique to lift heavy boulders, gaining +2 Strength.",
+        "rarity": "Common",
+        "effects": {"stats": {"strength": 2}}
+    },
+    "Saturnian Aerobatics": {
+        "desc": "The character learns incredible Saturn-style aerial maneuvers, gaining +2 Agility.",
+        "rarity": "Common",
+        "effects": {"stats": {"agility": 2}}
+    },
+    "Neptune Waterfall Focus": {
+        "desc": "The character focuses on the cascading waters of Neptune, gaining +2 Endurance.",
+        "rarity": "Common",
+        "effects": {"stats": {"endurance": 2}}
+    },
+    "Lunar Aether Dance": {
+        "desc": "The character learns to harness the power of the moon, gaining +2 Aether.",
+        "rarity": "Common",
+        "effects": {"stats": {"aether": 2}}
+    },
+    "Jupiter Library Study": {
+        "desc": "The character studies ancient texts in the Jupiter Library, gaining +2 Intelligence.",
+        "rarity": "Common",
+        "effects": {"stats": {"intelligence": 2}}
+    },
+    "Mars Wisdom Program": {
+        "desc": "The character participates in the Mars Wisdom Program, gaining +2 Wisdom.",
+        "rarity": "Common",
+        "effects": {"stats": {"wisdom": 2}}
+    },
+    "Watch a Plutonian movie": {
+        "desc": "The character watches a classic Plutonian film, gaining +2 Charisma.",
+        "rarity": "Common",
+        "effects": {"stats": {"charisma": 2}}
+    },
+    "Venus Lava Trial": {
+        "desc": "The character undergoes the Venus Lava Trial, gaining +2 Resistance.",
+        "rarity": "Common",
+        "effects": {"stats": {"resistance": 2}}
+    },
+    "All-around Earth Training": {
+        "desc": "The character engages in a comprehensive training regimen on Earth, gaining +1 to all stats.",
+        "rarity": "Rare",
+        "effects": {"stats": {s: 1 for s in ["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"]}}
+    },
+    "Arm Injury": {
+        "desc": "The character sustains an arm injury, resulting in -1 Strength and -1 Agility.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"strength": -1, "agility": -1}}
+    },
+    "Leg Injury": {
+        "desc": "The character sustains a leg injury, resulting in -1 Agility and -1 Endurance.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"agility": -1, "endurance": -1}}
+    },
+    "Back Injury": {
+        "desc": "The character sustains a back injury, resulting in -1 Strength and -1 Endurance.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"strength": -1, "endurance": -1}}
+    },
+    "Ionian Dancing Class": {
+        "desc": "The character takes a dancing class, gaining +1 Agility and +1 Charisma.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"agility": 1, "charisma": 1}}
+    },
+    "Meditation Retreat": {
+        "desc": "The character attends a meditation retreat, gaining +1 Wisdom and +1 Aether.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"wisdom": 1, "aether": 1}}
+    },
+    "Tritonian Chess Boxing": {
+        "desc": "The character participates in chess boxing, gaining +1 Strength and +1 Intelligence.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"strength": 1, "intelligence": 1}}
+    },
+    "Ganymedan Mental Fortitude Training": {
+        "desc": "The character undergoes rigorous mental training, gaining +1 Wisdom and +1 Intelligence.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"wisdom": 1, "intelligence": 1}}
+    },
+    "Chronic Headache": {
+        "desc": "The character suffers from a chronic headache, resulting in -1 Intelligence and -1 Wisdom.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"intelligence": -1, "wisdom": -1}}
+    },
+    "Romantic Rejection": {
+        "desc": "The character experiences a romantic rejection, resulting in -1 Charisma and -1 Aether.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"charisma": -1, "aether": -1}}
+    },
+    "Food Poisoning": {
+        "desc": "The character suffers from food poisoning, resulting in -1 Endurance and -1 Resistance.",
+        "rarity": "Uncommon",
+        "effects": {"stats": {"endurance": -1, "resistance": -1}}
+    },
+    "Power Awakening": {
+        "desc": "The character undergoes a power awakening, gaining a new power.",
+        "rarity": "Rare",
+        "effects": {"powers": ["Power from event"]}
+    },
+    "Cosmic Meditation": {
+        "desc": "The character meditates under the stars, gaining +1 Charisma, +1 Intelligence, +1 Aether, and +1 Wisdom.",
+        "rarity": "Rare",
+        "effects": {"stats": {"charisma": 1, "intelligence": 1, "aether": 1, "wisdom": 1}}
+    },
+    "Cosmic Physical Training": {
+        "desc": "The character trains under cosmic rays, gaining +1 Strength, +1 Resistance, +1 Agility, and +1 Endurance.",
+        "rarity": "Rare",
+        "effects": {"stats": {"strength": 1, "resistance": 1, "agility": 1, "endurance": 1}}
+    },
+    "Double Trouble": {
+        "desc": "The character finds a second weapon and changes the archetype to Dual Wielder.",
+        "rarity": "Very Rare",
+        "effects": {"weapons": ["Second Weapon from event"], "archetype": "Dual Wielder"}
+    },
+    "Catastrophic Failure": {
+        "desc": "The character experiences a catastrophic failure, resulting in -2 to all stats.",
+        "rarity": "Very Rare",
+        "effects": {"stats": {s: -2 for s in ["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"]}}
+    },
+    "Lone Wolf bargain": {
+        "desc": "The character embraces solitude. Loses all relationship but gains +3 in all stats.",
+        "rarity": "Very Rare",
+        "effects": {"clear_relationships": True, "stats": {s: 3 for s in ["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"]}}
+    },
+    "I have no enemies": {
+        "desc": "The character has no enemies, removes all bad relationships.",
+        "rarity": "Very Rare",
+        "effects": {"remove_bad_relationships": True}
+    },
+    "Joker's curse": {
+        "desc": "The character is cursed by the Joker, causing all of their stats to be reversed.",
+        "rarity": "Very Rare",
+        "effects": {"special": "reverse_stats"}
+    },
+    "Change of Morals": {
+        "desc": "The character undergoes a significant change in morals, randomly changes their moral alignment.",
+        "rarity": "Very Rare",
+        "effects": {"alignment": "random"}
+    },
+    "Alice in Wonderland?": {
+        "desc": "The character drinks a mysterious potion, completely changing their height.",
+        "rarity": "Very Rare",
+        "effects": {"special": "change_height"}
+    },
+    "Cosmic Blessing": {
+        "desc": "The character receives a cosmic blessing, gaining +2 to all stats and a new Legendary power.",
+        "rarity": "Extremely Rare",
+        "effects": {"stats": {s: 2 for s in ["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"]}, "powers": ["Legendary Power from event"]}
+    },
+    "Divine Gift": {
+        "desc": "The character receives a divine gift, a new Divine power.",
+        "rarity": "Extremely Rare",
+        "effects": {"powers": ["Divine Power from event"]}
+    }
 }
+# Weighted rarity for event picking
+RARITY_WEIGHTS = {
+    "Common": 50,
+    "Uncommon": 30,
+    "Rare": 15,
+    "Very Rare": 5,
+    "Extremely Rare": 1
+}
+
+# Valid stats
+STAT_NAMES = ["strength", "agility", "endurance", "intelligence", "wisdom", "charisma", "resistance", "aether"]
+def pick_random_event(events_dict):
+    """Pick a random event from a dict based on rarity."""
+    pool = []
+    for name, data in events_dict.items():
+        weight = RARITY_WEIGHTS.get(data["rarity"].strip(), 1)
+        pool.extend([name] * weight)
+    return random.choice(pool)
+
+def apply_effects(char, effects, other_char=None):
+    message=""
+    # Apply stat changes
+    if "stats" in effects:
+        for stat, change in effects["stats"].items():
+            char.get("stats", {})[stat] += change
+            message+=f"{char['name']}'s {stat}: has changed by {change}.\n"
+            message+=f"{char['name']}'s {stat}: is now {char.get('stats', {})[stat]}.\n"
+
+    # Add powers
+    if "powers" in effects:
+        # We pick a random power from all the lists 
+        
+        char.setdefault("powers", []).extend(effects["powers"])
+        message+=f"{char['name']}'s powers: has gotten the power: {effects['powers']}.\n"
+
+
+    # Add weapons
+    if "weapons" in effects:
+        char.setdefault("weapons", []).extend(effects["weapons"])
+        message+=f"{char['name']}'s weapons: has gotten the weapon: {len(effects['weapons'])}.\n"
+        
+
+    # Change archetype
+    if "archetype" in effects:
+        char["archetype"] = effects["archetype"]
+        message+=f"{char['name']}'s archetype: has changed to {effects['archetype']}.\n"
+        
+
+    # Change alignment
+    if "alignment" in effects:
+        if effects["alignment"] == "random":
+            char["moral_alignment"] = random.choice([
+                "Lawful Good", "Neutral Good", "Chaotic Good",
+                "Lawful Neutral", "True Neutral", "Chaotic Neutral",
+                "Lawful Evil", "Neutral Evil", "Chaotic Evil"
+            ])
+            message+=f"{char['name']}'s moral alignment: has changed to {char['moral_alignment']}.\n"
+        else:
+            char["moral_alignment"] = effects["alignment"]
+            message+=f"{char['name']}'s moral alignment: has changed to {char['moral_alignment']}.\n"
+            
+
+    # Relationships
+    if "relationships" in effects and other_char:   
+        # We firstly delete the relationship
+        for rel in char.get("relationships", []):
+            if rel["name"] == other_char["name"]:
+                char["relationships"].remove(rel)
+                break
+        for rel in effects["relationships"]:
+            char.setdefault("relationships", []).append({
+                "name": other_char["name"],
+                "type": rel["type"]
+        }
+        )
+        new_relationship=rel["type"]
+        message+=f"{char['name']}'s relationships: has gotten the relationship: {new_relationship}.\n"
+    # Clear all relationships
+    if effects.get("clear_relationships"):
+        # We make all relationship values are equal to not met
+        for rel in char.get("relationships", []):
+            rel["type"] = "Have not met"
+        message+=f"{char['name']}'s relationships: has cleared all relationships.\n"
+
+    # Remove only bad relationships
+    if effects.get("remove_bad_relationships") and "relationships" in char:
+        # We change all "Enemy" and "Rival" relationships to "Have not met"
+        for rel in char["relationships"]:
+            if rel["type"] in ["Enemy", "Rival"]:
+                rel["type"] = "Have not met"
+        message+=f"{char['name']}'s relationships: has removed bad relationships.\n"  
+    if "special" in effects:
+        if effects["special"] == "mentorship" and other_char:
+            # We make a new list of stats besides the height
+            new_stats = {k: v for k, v in char.get("stats", {}).items() if k != "height"}
+            best_stat = max(new_stats, key=new_stats.get, default=None)
+            if isinstance(other_char.get("stats", {}).get(best_stat), int):
+                char.get("stats", {})[best_stat] += 1
+                message+=f"{char['name']}'s {best_stat}: has increased by 1 due to mentorship.\n"
+
+        elif effects["special"] == "betrayal" and other_char:
+            # First character is betrayed
+            char.get("stats", {})["charisma"] -= 1
+            # Second character (betrayer) gets wisdom
+            other_char.get("stats", {})["wisdom"] += 1
+            message+=f"{char['name']}'s charisma: has decreased by 1 due to betrayal.\n"
+            message+=f"{char['name']}'s wisdom is now {char.get('stats', {})['wisdom']}.\n"
+            message+=f"{other_char['name']}'s wisdom: has increased by 1 due to betrayal.\n"
+            message+=f"{other_char['name']}'s wisdom is now {other_char.get('stats', {})['wisdom']}.\n"
+
+        elif effects["special"] == "enemy_victory" and other_char:
+            victor, loser = (char, other_char) if random.random() < 0.5 else (other_char, char)
+            stat = random.choice(["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"])
+            victor.get("stats", {})[stat] += 1
+            loser.get("stats", {})[stat] -= 1
+            message+=f"{victor['name']}'s {stat}: has increased by 1 due to enemy victory.\n"
+            message+=f"{victor['name']}'s {stat}: is now {victor.get('stats', {})[stat]}.\n"
+            message+=f"{loser['name']}'s {stat}: has decreased by 1 due to enemy victory.\n"
+            message+=f"{loser['name']}'s {stat}: is now {loser.get('stats', {})[stat]}.\n"
+
+        elif effects["special"] == "twin_blessing" and other_char:
+            best_stat = max(char.get("stats", {}), key=char.get("stats", {}).get, default=None)
+            char.get("stats", {})[best_stat] += 1
+            best_stat_other = max(other_char.get("stats", {}), key=other_char.get("stats", {}).get, default=None)
+            other_char.get("stats", {})[best_stat_other] += 1
+            message+=f"{char['name']}'s {best_stat}: has increased by 1 due to twin blessing.\n"
+            message+=f"{char['name']}'s {best_stat}: is now {char.get('stats', {})[best_stat]}.\n"
+            message+=f"{other_char['name']}'s {best_stat_other}: has increased by 1 due to twin blessing.\n"
+            message+=f"{other_char['name']}'s {best_stat_other}: is now {other_char.get('stats', {})[best_stat_other]}.\n"
+
+        elif effects["special"] == "weapon_trade" and other_char:
+            char["weapons"], other_char["weapons"] = other_char.get("weapons", []), char.get("weapons", [])
+            message+=f"{char['name']}'s weapons: has traded with {other_char['name']}'s weapons.\n"
+            message+=f"{char['name']}'s weapons: {char.get('weapons', [])}\n"
+            message+=f"{other_char['name']}'s weapons: {other_char.get('weapons', [])}\n"
+
+
+        elif effects["special"] == "power_mentorship" and other_char:
+            if char.get("powers") and other_char.get("powers"):
+                char["powers"].append(random.choice(other_char["powers"]))
+                other_char["powers"].append(random.choice(char["powers"]))
+                message+=f"{char['name']}'s powers: has learned a power from {other_char['name']}: {char['powers'][-1]}\n"
+                message+=f"{other_char['name']}'s powers: has learned a power from {char['name']}: {other_char['powers'][-1]}\n"
+
+        elif effects["special"] == "reverse_stats":
+            for stat in ["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"]:
+                char.get("stats", {})[stat] = 15-char.get("stats", {})[stat]
+                message+=f"{char['name']}'s {stat}: has been reversed.\n"
+                message+=f"{char['name']}'s {stat}: is now {char.get('stats', {})[stat]}.\n"
+
+        elif effects["special"] == "change_height":
+            char["height"] = random.randint(0, 500)
+            message+=f"{char['name']}'s height: has been changed to {char.get('height', 'unknown')} cm.\n"
+    return message
+
+def trigger_random_event():
+    characters = load_characters()
+    if not characters:
+        return "No characters available."
+
+    if len(characters) >= 2 and random.random() < 0.4:
+        event_name = pick_random_event(possible_duo_events)
+        event_data = possible_duo_events[event_name]
+        char1, char2 = random.sample(characters, 2)
+        message1=apply_effects(char1, event_data["effects"], char2)
+        message2=apply_effects(char2, event_data["effects"], char1)
+        # add the characters change into the characters
+        characters[characters.index(char1)] = char1
+        characters[characters.index(char2)] = char2
+        save_characters(characters)
+        return message1,message2,f"Duo Event: {event_name}\n{event_data['desc']}\n Character 1: {char1['name']}\n Character 2: {char2['name']}"
+
+    else:
+        event_name = pick_random_event(possible_single_event)
+        event_data = possible_single_event[event_name]
+        char = random.choice(characters)
+        message=apply_effects(char, event_data["effects"])
+        characters[characters.index(char)] = char
+        save_characters(characters)
+        return message,"",f"Single Event: {event_name}\n{event_data['desc']}\n Character: {char['name']}"
+
+
 
 
 # Flet main UI
@@ -980,6 +1386,22 @@ def main(page: ft.Page):
             details_display
         ], scroll="auto", expand=True)
 
+    def build_event_tab(page):
+        log_display = ft.Column(scroll="auto", expand=True)
+
+        def trigger_event_click(e):
+            message1,message2,result = trigger_random_event()
+            log_display.controls.insert(0, ft.Text(result, color="lightblue"))
+            log_display.controls.insert(1, ft.Text(message1, color="lightgreen"))
+            log_display.controls.insert(2, ft.Text(message2, color="lightgreen"))
+            page.update()
+
+        return ft.Column([
+            ft.Text("Simulate Event", size=18, weight="bold"),
+            ft.ElevatedButton("Trigger Random Event", on_click=trigger_event_click),
+            ft.Divider(),
+            log_display
+        ], expand=True)
     # Tabs
     tabs = ft.Tabs(
         selected_index=0,
@@ -993,7 +1415,8 @@ def main(page: ft.Page):
             ft.Tab(text="Weapons and Powers", content=build_weapon_power_tab()),
             ft.Tab(text="Archetypes", content=build_archetype_tab()),
             ft.Tab(text="Tournament Mode", content=build_tournament_tab()),
-            ft.Tab(text="Relationships", content=build_relationships_tab(page))
+            ft.Tab(text="Relationships", content=build_relationships_tab(page)),
+            ft.Tab(text="Events", content=build_event_tab(page))
         ],
         expand=1
     )

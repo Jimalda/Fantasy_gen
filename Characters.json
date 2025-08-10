@@ -6,14 +6,14 @@
         "archetype": "Cosmic Guardian",
         "stats": {
             "height": 244,
-            "strength": 14,
-            "agility": 16,
-            "endurance": 17,
+            "strength": 17,
+            "agility": 17,
+            "endurance": 22,
             "aether": 7,
-            "wisdom": 5,
-            "intelligence": 3,
+            "wisdom": 7,
+            "intelligence": 4,
             "charisma": 5,
-            "resistance": 13
+            "resistance": 15
         },
         "powers": [
             "Water Manipulation",
@@ -47,10 +47,6 @@
                 "type": "Have not met"
             },
             {
-                "name": "Emilio",
-                "type": "Have not met"
-            },
-            {
                 "name": "Matias",
                 "type": "Have not met"
             },
@@ -81,6 +77,10 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Emilio",
+                "type": "Enemy"
             }
         ]
     },
@@ -92,13 +92,13 @@
         "stats": {
             "height": 157,
             "strength": 17,
-            "agility": 13,
-            "endurance": 13,
+            "agility": 12,
+            "endurance": 15,
             "aether": 12,
-            "wisdom": 10,
-            "intelligence": 19,
-            "charisma": 5,
-            "resistance": 0
+            "wisdom": 12,
+            "intelligence": 20,
+            "charisma": 7,
+            "resistance": -2
         },
         "powers": [
             "Shadow Manipulation",
@@ -106,7 +106,9 @@
             "Hellfire",
             "Flight",
             "Night Vision",
-            "Bloodbending"
+            "Bloodbending",
+            "Healing Light",
+            "Light Manipulation"
         ],
         "weapons": [
             "Dagger"
@@ -147,10 +149,6 @@
                 "type": "Have not met"
             },
             {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
                 "name": "Ada",
                 "type": "Have not met"
             },
@@ -169,6 +167,10 @@
             {
                 "name": "Mert",
                 "type": "Close Friend"
+            },
+            {
+                "name": "Toby",
+                "type": "Friend"
             }
         ]
     },
@@ -179,14 +181,14 @@
         "archetype": "Siphoner",
         "stats": {
             "height": 166,
-            "strength": 14,
-            "agility": 5,
-            "endurance": 17,
-            "aether": 12,
-            "wisdom": 14,
+            "strength": 16,
+            "agility": 10,
+            "endurance": 19,
+            "aether": 13,
+            "wisdom": 17,
             "intelligence": 3,
-            "charisma": 8,
-            "resistance": 15
+            "charisma": 11,
+            "resistance": 18
         },
         "powers": [
             "Shadow Manipulation",
@@ -228,10 +230,6 @@
                 "type": "Close Friend"
             },
             {
-                "name": "Mustafa",
-                "type": "Friend"
-            },
-            {
                 "name": "Toby",
                 "type": "Friend"
             },
@@ -254,6 +252,10 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Rival"
             }
         ]
     },
@@ -263,15 +265,15 @@
         "subrace": "Dragon",
         "archetype": "Berserker",
         "stats": {
-            "height": 521,
-            "strength": 14,
-            "agility": 12,
-            "endurance": 12,
+            "height": 522,
+            "strength": 16,
+            "agility": 14,
+            "endurance": 13,
             "aether": 14,
             "wisdom": 12,
-            "intelligence": 10,
-            "charisma": 11,
-            "resistance": 9
+            "intelligence": 13,
+            "charisma": 14,
+            "resistance": 8
         },
         "powers": [
             "Fire Manipulation",
@@ -298,10 +300,6 @@
             },
             {
                 "name": "Parichay",
-                "type": "Have not met"
-            },
-            {
-                "name": "Castor",
                 "type": "Have not met"
             },
             {
@@ -337,6 +335,10 @@
                 "type": "Have not met"
             },
             {
+                "name": "Castor",
+                "type": "Friend"
+            },
+            {
                 "name": "Mert",
                 "type": "Friend"
             }
@@ -348,15 +350,15 @@
         "subrace": "Oceanic",
         "archetype": "None",
         "stats": {
-            "height": 191,
+            "height": 192,
             "strength": 15,
-            "agility": 2,
+            "agility": 1,
             "endurance": 14,
-            "aether": 11,
-            "wisdom": 0,
-            "intelligence": 10,
+            "aether": 12,
+            "wisdom": 1,
+            "intelligence": 12,
             "charisma": 15,
-            "resistance": 1
+            "resistance": 2
         },
         "powers": [
             "Mind Control"
@@ -432,13 +434,13 @@
         "archetype": "Healer",
         "stats": {
             "height": 166,
-            "strength": 5,
-            "agility": 8,
-            "endurance": 12,
+            "strength": 3,
+            "agility": 7,
+            "endurance": 11,
             "aether": 16,
-            "wisdom": 5,
-            "intelligence": 1,
-            "charisma": 15,
+            "wisdom": 8,
+            "intelligence": 4,
+            "charisma": 19,
             "resistance": 12
         },
         "powers": [
@@ -462,10 +464,6 @@
             },
             {
                 "name": "Isabel",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
                 "type": "Have not met"
             },
             {
@@ -507,6 +505,10 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Levi",
+                "type": "Friend"
             }
         ]
     },
@@ -517,14 +519,14 @@
         "archetype": "None",
         "stats": {
             "height": 284,
-            "strength": 15,
-            "agility": 3,
-            "endurance": 4,
-            "aether": 2,
+            "strength": 18,
+            "agility": 4,
+            "endurance": 5,
+            "aether": 6,
             "wisdom": 15,
             "intelligence": 10,
-            "charisma": 6,
-            "resistance": 5
+            "charisma": 9,
+            "resistance": 6
         },
         "powers": [
             "Bloodbending"
@@ -535,10 +537,6 @@
         "moral_alignment": "Lawful Evil",
         "partner": null,
         "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
             {
                 "name": "Aarohi",
                 "type": "Close Friend"
@@ -572,10 +570,6 @@
                 "type": "Have not met"
             },
             {
-                "name": "Ada",
-                "type": "Friend"
-            },
-            {
                 "name": "Iason",
                 "type": "Have not met"
             },
@@ -590,6 +584,14 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Rival"
+            },
+            {
+                "name": "Junior",
+                "type": "Enemy"
             }
         ]
     },
@@ -599,19 +601,21 @@
         "subrace": "Elven",
         "archetype": "None",
         "stats": {
-            "height": 142,
+            "height": 144,
             "strength": 1,
-            "agility": 10,
-            "endurance": 5,
-            "aether": 16,
-            "wisdom": 6,
-            "intelligence": 5,
+            "agility": 12,
+            "endurance": 2,
+            "aether": 17,
+            "wisdom": 10,
+            "intelligence": 7,
             "charisma": 3,
             "resistance": 10
         },
         "powers": [
             "Nature's Grace",
-            "Charge Attack"
+            "Charge Attack",
+            "Ice Manipulation",
+            "Emotional Manipulation"
         ],
         "weapons": [
             "Moon Brush"
@@ -684,13 +688,13 @@
         "archetype": "Tank",
         "stats": {
             "height": 163,
-            "strength": 15,
+            "strength": 16,
             "agility": 11,
             "endurance": 19,
-            "aether": 7,
-            "wisdom": 1,
-            "intelligence": 0,
-            "charisma": 11,
+            "aether": 8,
+            "wisdom": 3,
+            "intelligence": 3,
+            "charisma": 13,
             "resistance": 8
         },
         "powers": [
@@ -709,10 +713,6 @@
             {
                 "name": "Aarohi",
                 "type": "Have not met"
-            },
-            {
-                "name": "Isabel",
-                "type": "Friend"
             },
             {
                 "name": "Levi",
@@ -757,6 +757,10 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Isabel",
+                "type": "Rival"
             }
         ]
     },
@@ -769,12 +773,12 @@
             "height": 230,
             "strength": 16,
             "agility": 4,
-            "endurance": 12,
+            "endurance": 13,
             "aether": 4,
             "wisdom": 7,
-            "intelligence": 0,
-            "charisma": 14,
-            "resistance": 11
+            "intelligence": -2,
+            "charisma": 15,
+            "resistance": 12
         },
         "powers": [
             "Earth Manipulation",
@@ -788,10 +792,6 @@
         "relationships": [
             {
                 "name": "Junior",
-                "type": "Have not met"
-            },
-            {
-                "name": "Aarohi",
                 "type": "Have not met"
             },
             {
@@ -831,18 +831,23 @@
                 "type": "Have not met"
             },
             {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
                 "name": "Haru",
                 "type": "Rival"
             },
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Friend"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Friend"
             }
-        ]
+        ],
+        "agility": 2
     },
     {
         "name": "Ada",
@@ -851,14 +856,14 @@
         "archetype": "Mage",
         "stats": {
             "height": 164,
-            "strength": 15,
-            "agility": 14,
+            "strength": 16,
+            "agility": 15,
             "endurance": 14,
-            "aether": 18,
+            "aether": 17,
             "wisdom": 6,
             "intelligence": 8,
-            "charisma": 7,
-            "resistance": 14
+            "charisma": 6,
+            "resistance": 16
         },
         "powers": [
             "Fire Manipulation",
@@ -897,10 +902,6 @@
                 "type": "Have not met"
             },
             {
-                "name": "Emilio",
-                "type": "Friend"
-            },
-            {
                 "name": "Matias",
                 "type": "Have not met"
             },
@@ -927,8 +928,14 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Emilio",
+                "type": "Rival"
             }
-        ]
+        ],
+        "wisdom": 1,
+        "strength": 1
     },
     {
         "name": "Iason",
@@ -937,19 +944,20 @@
         "archetype": "Rider",
         "stats": {
             "height": 238,
-            "strength": 12,
-            "agility": 7,
-            "endurance": 5,
-            "aether": 3,
+            "strength": 13,
+            "agility": 8,
+            "endurance": 6,
+            "aether": 4,
             "wisdom": 8,
-            "intelligence": 12,
-            "charisma": 15,
+            "intelligence": 13,
+            "charisma": 17,
             "resistance": 6
         },
         "powers": [
             "Ice Manipulation",
             "Flight",
-            "Emotional Manipulation"
+            "Emotional Manipulation",
+            "Nature's Grace"
         ],
         "weapons": [
             "Volcanic Claws"
@@ -1022,14 +1030,14 @@
         "archetype": "Tank",
         "stats": {
             "height": 235,
-            "strength": 6,
+            "strength": 8,
             "agility": 1,
-            "endurance": 18,
+            "endurance": 19,
             "aether": 13,
-            "wisdom": 10,
-            "intelligence": 4,
-            "charisma": 3,
-            "resistance": 15
+            "wisdom": 9,
+            "intelligence": 3,
+            "charisma": 5,
+            "resistance": 17
         },
         "powers": [
             "Fire Manipulation",
@@ -1078,10 +1086,6 @@
                 "type": "Close Friend"
             },
             {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
                 "name": "Ada",
                 "type": "Have not met"
             },
@@ -1096,6 +1100,14 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Mert",
+                "type": "Friend"
+            },
+            {
+                "name": "Toby",
+                "type": "Friend"
             }
         ]
     },
@@ -1105,21 +1117,23 @@
         "subrace": "Lightyearian",
         "archetype": "Healer",
         "stats": {
-            "height": 187,
+            "height": 189,
             "strength": 5,
-            "agility": 16,
-            "endurance": 7,
+            "agility": 17,
+            "endurance": 10,
             "aether": 2,
             "wisdom": 6,
-            "intelligence": 13,
+            "intelligence": 14,
             "charisma": 2,
-            "resistance": 7
+            "resistance": 8
         },
         "powers": [
             "Light Manipulation",
             "Light Speed Travel",
             "Healing Light",
-            "TikTok Dance"
+            "TikTok Dance",
+            "Bloodbending",
+            "Bloodbending"
         ],
         "weapons": [
             "Chained Whip"
@@ -1192,14 +1206,14 @@
         "archetype": "Tank",
         "stats": {
             "height": 196,
-            "strength": 16,
+            "strength": 20,
             "agility": 2,
             "endurance": 10,
-            "aether": 15,
+            "aether": 14,
             "wisdom": 15,
             "intelligence": 5,
-            "charisma": 2,
-            "resistance": 8
+            "charisma": 3,
+            "resistance": 10
         },
         "powers": [
             "Illusions"
@@ -1221,10 +1235,6 @@
             {
                 "name": "Isabel",
                 "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Friend"
             },
             {
                 "name": "Parichay",
@@ -1265,6 +1275,14 @@
             {
                 "name": "Haru",
                 "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Friend"
+            },
+            {
+                "name": "Levi",
+                "type": "Friend"
             }
         ]
     }
