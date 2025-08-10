@@ -1395,5 +1395,13 @@ def simulate_battle_ui(char1_name, char2_name):
         "diff": Diff
     }
 
+def get_random_power():
+    all_powers = Common_powers + Uncommon_powers + Rare_powers + Epic_powers + Legendary_powers + Divine_Powers + Weird_powers
+    return random.choice(all_powers)
 
-
+def get_random_divine_power():
+    all_divine_powers = Divine_Powers
+    return random.choice(all_divine_powers)
+def get_random_weapon():
+    all_weapons = Common_weapons + Uncommon_weapons + Rare_weapons + Epic_weapons + Legendary_weapons + Divine_Weapons + Weird_weapons
+    return random.choice(all_weapons)

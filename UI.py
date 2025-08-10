@@ -1,5 +1,5 @@
 import flet as ft
-from Fantasygenerator import Character, load_characters,simulate_battle_ui,save_characters
+from Fantasygenerator import Character, get_random_weapon, load_characters,simulate_battle_ui,save_characters,get_random_divine_power,get_random_power
 from Fantasygenerator import Common_weapons,Uncommon_weapons,Rare_weapons,Legendary_weapons,Weird_weapons,Divine_Weapons, Common_powers, Uncommon_powers, Rare_powers, Epic_powers, Legendary_powers, Divine_Powers, Weird_powers
 from Fantasygenerator import No_archetypes, Common_archetypes, Uncommon_archetypes, Rare_archetypes,Epic_archetypes,Legendary_archetypes
 import random
@@ -391,11 +391,11 @@ possible_duo_events = {
             "stats": {"agility": 1, "strength": 1}
         }
     },
-    "Victory over enemy": {
-        "desc": "Two characters fight. The victor gains +1 in a random stat and the loser gets -1 in a random stat.",
+    "Stat Trade": {
+        "desc": "The characters agree to trade one of their stats. Each character gains +1 in the stat they receive and loses -1 in the stat they give.",
         "rarity": "Common",
         "effects": {
-            "special": "enemy_victory"
+            "special": "stat_trade"
         }
     },
     "New Friend": {
@@ -415,7 +415,7 @@ possible_duo_events = {
         }
     },
     "Twin Blessing": {
-        "desc": "Two characters gain a shared blessing, each receiving +1 to all of their best stat.",
+        "desc": "Two characters gain a shared blessing, each receiving +1 to all of their stats.",
         "rarity": "Extremely Rare",
         "effects": {
             "special": "twin_blessing"
@@ -640,16 +640,26 @@ def apply_effects(char, effects, other_char=None):
 
     # Add powers
     if "powers" in effects:
-        # We pick a random power from all the lists 
-        
-        char.setdefault("powers", []).extend(effects["powers"])
-        message+=f"{char['name']}'s powers: has gotten the power: {effects['powers']}.\n"
-
+        # We pick a random power from all the lists and we make sure that the character does not already have that power
+        if effects["powers"] == "Power from event":
+            new_power = get_random_power()
+            while new_power in char.get("powers", []):
+                new_power = get_random_power()
+            char.setdefault("powers", []).append(new_power)
+        elif effects["powers"] == "Divine Power from event":
+            new_power = get_random_divine_power()
+            while new_power in char.get("powers", []):
+                new_power = get_random_divine_power()
+            char.setdefault("powers", []).append(new_power)
+        message+=f"{char['name']}'s powers: has gotten the powers: {new_power}.\n"
 
     # Add weapons
     if "weapons" in effects:
-        char.setdefault("weapons", []).extend(effects["weapons"])
-        message+=f"{char['name']}'s weapons: has gotten the weapon: {len(effects['weapons'])}.\n"
+        # We pick a random weapon from all the lists
+        if effects["weapons"] == "Second Weapon from event":
+            new_weapon = get_random_weapon()
+            char.setdefault("weapons", []).append(new_weapon)
+        message+=f"{char['name']}'s weapons: has gotten the weapons: {new_weapon}.\n"
         
 
     # Change archetype
@@ -720,7 +730,7 @@ def apply_effects(char, effects, other_char=None):
             message+=f"{other_char['name']}'s wisdom: has increased by 1 due to betrayal.\n"
             message+=f"{other_char['name']}'s wisdom is now {other_char.get('stats', {})['wisdom']}.\n"
 
-        elif effects["special"] == "enemy_victory" and other_char:
+        elif effects["special"] == "stat_trade" and other_char:
             victor, loser = (char, other_char) if random.random() < 0.5 else (other_char, char)
             stat = random.choice(["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"])
             victor.get("stats", {})[stat] += 1
@@ -731,14 +741,13 @@ def apply_effects(char, effects, other_char=None):
             message+=f"{loser['name']}'s {stat}: is now {loser.get('stats', {})[stat]}.\n"
 
         elif effects["special"] == "twin_blessing" and other_char:
-            best_stat = max(char.get("stats", {}), key=char.get("stats", {}).get, default=None)
-            char.get("stats", {})[best_stat] += 1
-            best_stat_other = max(other_char.get("stats", {}), key=other_char.get("stats", {}).get, default=None)
-            other_char.get("stats", {})[best_stat_other] += 1
-            message+=f"{char['name']}'s {best_stat}: has increased by 1 due to twin blessing.\n"
-            message+=f"{char['name']}'s {best_stat}: is now {char.get('stats', {})[best_stat]}.\n"
-            message+=f"{other_char['name']}'s {best_stat_other}: has increased by 1 due to twin blessing.\n"
-            message+=f"{other_char['name']}'s {best_stat_other}: is now {other_char.get('stats', {})[best_stat_other]}.\n"
+            for stat in ["strength","agility","endurance","intelligence","wisdom","charisma","resistance","aether"]:
+                char.get("stats", {})[stat] += 1
+                other_char.get("stats", {})[stat] += 1
+                message+=f"{char['name']}'s {stat}: has increased by 1 due to twin blessing.\n"
+                message+=f"{other_char['name']}'s {stat}: has increased by 1 due to twin blessing.\n"
+            message+=f"{char['name']}'s stats: {char.get('stats', {})}\n"
+            message+=f"{other_char['name']}'s stats: {other_char.get('stats', {})}\n"
 
         elif effects["special"] == "weapon_trade" and other_char:
             char["weapons"], other_char["weapons"] = other_char.get("weapons", []), char.get("weapons", [])
