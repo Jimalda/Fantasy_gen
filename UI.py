@@ -324,6 +324,108 @@ def assign_relationships():
 
     save_characters(characters)
     print("Relationships assigned.")
+    
+def get_event_weight(event_name, event_data, char1, char2=None):
+    weight = 1  # base chance
+
+    # ===== Relationship-based weighting =====
+    if char2:
+        if "Rival" in event_data["desc"].lower():
+            if any(r["name"] == char2["name"] and r["type"] in ["Rival", "Enemy"] for r in char1.get("relationships", [])):
+                weight += 2
+        if "Friend" in event_data["desc"] or "Ally" in event_data["desc"]:
+            if any(r["type"] in ["Friend", "Ally"] for r in char1.get("relationships", [])):
+                weight += 1
+
+    # ===== Moral alignment weighting =====
+    if char2:
+        align1 = char1.get("moral_alignment")
+        align2 = char2.get("moral_alignment")
+        if align1 and align2:
+            if align1.split()[1] == align2.split()[1]:  # same good/neutral/evil
+                if "Friend" in event_data["desc"] or "Ally" in event_data["desc"]:
+                    weight += 1
+            elif "Betrayal" in event_name or "Enemy" in event_name:
+                weight += 1
+
+    # ===== Stat-based weighting =====
+    if "Strength" in event_data["desc"] and char1.get("strength", 0) < 5:
+        weight += 2
+    if "Agility" in event_data["desc"] and char1.get("agility", 0) < 5:
+        weight += 2
+
+    # ===== Apply rare event story triggers =====
+    weight *= rare_event_trigger(event_name, event_data, char1, char2)
+
+    return weight
+
+def rare_event_trigger(event_name, event_data, char1, char2=None):
+    rarity = event_data.get("rarity", "").lower()
+    multiplier = 1
+
+    if rarity in ["very rare", "extremely rare"]:
+        # === Positive rise-to-power triggers ===
+        if "Divine Gift" in event_name or "Cosmic" in event_name:
+            total_stats = sum(char1.get(stat, 0) for stat in ["strength", "agility", "endurance", "intelligence", "wisdom", "charisma", "resistance", "aether"])
+            if total_stats >= 50:
+                multiplier = 3
+            else:
+                multiplier = 0.2
+
+        if "Betrayal" in event_name:
+            if char2 and any(r["name"] == char2["name"] and r["type"] in ["Friend", "Ally"] for r in char1.get("relationships", [])):
+                multiplier = 2
+            else:
+                multiplier = 0.1
+
+        if "Legendary" in event_name:
+            if char1.get("events_survived", 0) >= 10:
+                multiplier = 2
+            else:
+                multiplier = 0.2
+
+        # === Downward spiral triggers ===
+        if "Catastrophic Failure" in event_name:
+            avg_stat = sum(char1.get(stat, 0) for stat in ["strength", "agility", "endurance", "intelligence", "wisdom", "charisma", "resistance", "aether"]) / 8
+            if avg_stat < 4:
+                multiplier = 2.5
+            else:
+                multiplier = 0.5
+
+        if "Joker's curse" in event_name:
+            if random.random() < 0.1:  # still mostly rare
+                multiplier = 1.5
+            else:
+                multiplier = 0.5
+
+        if "Arm Injury" in event_name or "Leg Injury" in event_name or "Back Injury" in event_name:
+            if char1.get("strength", 0) > 7 or char1.get("agility", 0) > 7:
+                multiplier = 1.8  # injuries target the strong/agile more often
+
+    return multiplier
+
+def weighted_random_event(events_dict, char1, char2=None, debug=False):
+    event_names = list(events_dict.keys())
+    weights = []
+
+    for name in event_names:
+        w = get_event_weight(name, events_dict[name], char1, char2)
+        weights.append(w)
+
+    if debug:
+        print("\n=== Weighted Event Chances ===")
+        total_weight = sum(weights)
+        for name, w in zip(event_names, weights):
+            print(f"{name}: {round((w/total_weight)*100, 2)}% chance")
+
+    # Weighted choice
+    total = sum(weights)
+    rand_val = random.uniform(0, total)
+    current = 0
+    for name, w in zip(event_names, weights):
+        current += w
+        if rand_val <= current:
+            return name
 
 # Character card
 def character_card(data):
@@ -799,31 +901,26 @@ def apply_effects(char, effects, other_char=None):
             message+=f"{char['name']}'s height: has been changed to {char.get('height', 'unknown')} cm.\n"
     return message
 
-def trigger_random_event():
+def trigger_random_event(debug=False):
     characters = load_characters()
     if not characters:
         return "No characters available."
 
     if len(characters) >= 2 and random.random() < 0.4:
-        event_name = pick_random_event(possible_duo_events)
-        event_data = possible_duo_events[event_name]
         char1, char2 = random.sample(characters, 2)
+        event_name = weighted_random_event(possible_duo_events, char1, char2, debug=debug)
+        event_data = possible_duo_events[event_name]
         message1=apply_effects(char1, event_data["effects"], char2)
         message2=apply_effects(char2, event_data["effects"], char1)
-        # add the characters change into the characters
-        characters[characters.index(char1)] = char1
-        characters[characters.index(char2)] = char2
         save_characters(characters)
         return message1,message2,f"Duo Event: {event_name}\n{event_data['desc']}\n Character 1: {char1['name']}\n Character 2: {char2['name']}"
-
     else:
-        event_name = pick_random_event(possible_single_event)
-        event_data = possible_single_event[event_name]
         char = random.choice(characters)
+        event_name = weighted_random_event(possible_single_event, char,debug=debug)
+        event_data = possible_single_event[event_name]
         message=apply_effects(char, event_data["effects"])
-        characters[characters.index(char)] = char
         save_characters(characters)
-        return message,"",f"Single Event: {event_name}\n{event_data['desc']}\n Character: {char['name']}"
+        return message,"",f"Single Event: {event_name}\n{event_data['desc']}"
 
 
 

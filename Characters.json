@@ -7,8 +7,8 @@
         "stats": {
             "height": 244,
             "strength": 17,
-            "agility": 17,
-            "endurance": 22,
+            "agility": 18,
+            "endurance": 21,
             "aether": 7,
             "wisdom": 7,
             "intelligence": 4,
@@ -18,7 +18,9 @@
         "powers": [
             "Water Manipulation",
             "Infinite Energy",
-            "Teleportation"
+            "Teleportation",
+            "TikTok Dance",
+            "Fire Manipulation"
         ],
         "weapons": [
             "Atomic launcher"
@@ -51,10 +53,6 @@
                 "type": "Have not met"
             },
             {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
                 "name": "Toby",
                 "type": "Have not met"
             },
@@ -81,6 +79,10 @@
             {
                 "name": "Emilio",
                 "type": "Enemy"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Rival"
             }
         ]
     },
@@ -96,7 +98,7 @@
             "endurance": 15,
             "aether": 12,
             "wisdom": 12,
-            "intelligence": 20,
+            "intelligence": 21,
             "charisma": 7,
             "resistance": -2
         },
@@ -357,7 +359,7 @@
             "aether": 12,
             "wisdom": 1,
             "intelligence": 12,
-            "charisma": 15,
+            "charisma": 17,
             "resistance": 2
         },
         "powers": [
@@ -390,10 +392,6 @@
                 "type": "Friend"
             },
             {
-                "name": "Emilio",
-                "type": "Close Friend"
-            },
-            {
                 "name": "Matias",
                 "type": "Rival"
             },
@@ -424,6 +422,10 @@
             {
                 "name": "Mert",
                 "type": "Have not met"
+            },
+            {
+                "name": "Emilio",
+                "type": "Rival"
             }
         ]
     },
@@ -434,14 +436,14 @@
         "archetype": "Healer",
         "stats": {
             "height": 166,
-            "strength": 3,
-            "agility": 7,
-            "endurance": 11,
+            "strength": 2,
+            "agility": 6,
+            "endurance": 10,
             "aether": 16,
             "wisdom": 8,
             "intelligence": 4,
             "charisma": 19,
-            "resistance": 12
+            "resistance": 11
         },
         "powers": [
             "Dream Manipulation",
@@ -519,8 +521,8 @@
         "archetype": "None",
         "stats": {
             "height": 284,
-            "strength": 18,
-            "agility": 4,
+            "strength": 19,
+            "agility": 5,
             "endurance": 5,
             "aether": 6,
             "wisdom": 15,
@@ -548,10 +550,6 @@
             {
                 "name": "Levi",
                 "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Close Friend"
             },
             {
                 "name": "Castor",
@@ -592,6 +590,10 @@
             {
                 "name": "Junior",
                 "type": "Enemy"
+            },
+            {
+                "name": "Parichay",
+                "type": "Rival"
             }
         ]
     },
@@ -688,8 +690,8 @@
         "archetype": "Tank",
         "stats": {
             "height": 163,
-            "strength": 16,
-            "agility": 11,
+            "strength": 17,
+            "agility": 12,
             "endurance": 19,
             "aether": 8,
             "wisdom": 3,
@@ -706,10 +708,6 @@
         "moral_alignment": "Lawful Neutral",
         "partner": null,
         "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
             {
                 "name": "Aarohi",
                 "type": "Have not met"
@@ -761,6 +759,10 @@
             {
                 "name": "Isabel",
                 "type": "Rival"
+            },
+            {
+                "name": "Junior",
+                "type": "Rival"
             }
         ]
     },
@@ -771,7 +773,7 @@
         "archetype": "Tank",
         "stats": {
             "height": 230,
-            "strength": 16,
+            "strength": 17,
             "agility": 4,
             "endurance": 13,
             "aether": 4,
@@ -869,7 +871,8 @@
             "Fire Manipulation",
             "Shadow Manipulation",
             "TikTok Dance",
-            "Testi Tortion"
+            "Testi Tortion",
+            "Water Manipulation"
         ],
         "weapons": [
             "Sword"
@@ -1030,12 +1033,12 @@
         "archetype": "Tank",
         "stats": {
             "height": 235,
-            "strength": 8,
+            "strength": 11,
             "agility": 1,
             "endurance": 19,
             "aether": 13,
-            "wisdom": 9,
-            "intelligence": 3,
+            "wisdom": 10,
+            "intelligence": 5,
             "charisma": 5,
             "resistance": 17
         },
