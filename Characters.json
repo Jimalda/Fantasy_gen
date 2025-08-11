@@ -1,566 +1,68 @@
 [
     {
         "name": "Junior",
-        "race": "Terrians",
-        "subrace": "Atlantean",
-        "archetype": "Cosmic Guardian",
-        "stats": {
-            "height": 244,
-            "strength": 17,
-            "agility": 18,
-            "endurance": 21,
-            "aether": 7,
-            "wisdom": 7,
-            "intelligence": 4,
-            "charisma": 5,
-            "resistance": 15
-        },
-        "powers": [
-            "Water Manipulation",
-            "Infinite Energy",
-            "Teleportation",
-            "TikTok Dance",
-            "Fire Manipulation"
-        ],
-        "weapons": [
-            "Atomic launcher"
-        ],
-        "moral_alignment": "Chaotic Neutral",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Aarohi",
-                "type": "Friend"
-            },
-            {
-                "name": "Isabel",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Friend"
-            },
-            {
-                "name": "Castor",
-                "type": "Have not met"
-            },
-            {
-                "name": "Matias",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Friend"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Enemy"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Rival"
-            }
-        ]
-    },
-    {
-        "name": "Aarohi",
-        "race": "Plutonians",
-        "subrace": "Infernal",
-        "archetype": "Warrior",
-        "stats": {
-            "height": 157,
-            "strength": 17,
-            "agility": 12,
-            "endurance": 15,
-            "aether": 12,
-            "wisdom": 12,
-            "intelligence": 21,
-            "charisma": 7,
-            "resistance": -2
-        },
-        "powers": [
-            "Shadow Manipulation",
-            "Mind Control",
-            "Hellfire",
-            "Flight",
-            "Night Vision",
-            "Bloodbending",
-            "Healing Light",
-            "Light Manipulation"
-        ],
-        "weapons": [
-            "Dagger"
-        ],
-        "moral_alignment": "Lawful Evil",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Friend"
-            },
-            {
-                "name": "Isabel",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Enemy"
-            },
-            {
-                "name": "Castor",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Matias",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Enemy"
-            },
-            {
-                "name": "Haru",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Mert",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Toby",
-                "type": "Friend"
-            }
-        ]
-    },
-    {
-        "name": "Isabel",
-        "race": "Lunarians",
-        "subrace": "Nightstalker",
-        "archetype": "Siphoner",
-        "stats": {
-            "height": 166,
-            "strength": 16,
-            "agility": 10,
-            "endurance": 19,
-            "aether": 13,
-            "wisdom": 17,
-            "intelligence": 3,
-            "charisma": 11,
-            "resistance": 18
-        },
-        "powers": [
-            "Shadow Manipulation",
-            "Night Vision",
-            "Creation"
-        ],
-        "weapons": [
-            "Cloud Board"
-        ],
-        "moral_alignment": "Chaotic Good",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
-            {
-                "name": "Aarohi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Friend"
-            },
-            {
-                "name": "Castor",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Have not met"
-            },
-            {
-                "name": "Matias",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Toby",
-                "type": "Friend"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Friend"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Rival"
-            }
-        ]
-    },
-    {
-        "name": "Levi",
-        "race": "Venusians",
-        "subrace": "Dragon",
-        "archetype": "Berserker",
-        "stats": {
-            "height": 522,
-            "strength": 16,
-            "agility": 14,
-            "endurance": 13,
-            "aether": 14,
-            "wisdom": 12,
-            "intelligence": 13,
-            "charisma": 14,
-            "resistance": 8
-        },
-        "powers": [
-            "Fire Manipulation",
-            "Flight",
-            "Light Speed Travel"
-        ],
-        "weapons": [
-            "Dagger"
-        ],
-        "moral_alignment": "True Neutral",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
-            {
-                "name": "Aarohi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Isabel",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Have not met"
-            },
-            {
-                "name": "Matias",
-                "type": "Friend"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Castor",
-                "type": "Friend"
-            },
-            {
-                "name": "Mert",
-                "type": "Friend"
-            }
-        ]
-    },
-    {
-        "name": "Parichay",
         "race": "Neptunians",
-        "subrace": "Oceanic",
-        "archetype": "None",
+        "subrace": "Neptunian",
+        "archetype": "Assassin",
         "stats": {
-            "height": 192,
-            "strength": 15,
-            "agility": 1,
-            "endurance": 14,
-            "aether": 12,
-            "wisdom": 1,
-            "intelligence": 12,
-            "charisma": 17,
+            "height": 206,
+            "strength": 11,
+            "agility": 8,
+            "endurance": 20,
+            "aether": 0,
+            "wisdom": 0,
+            "intelligence": 6,
+            "charisma": 3,
             "resistance": 2
         },
         "powers": [
-            "Mind Control"
+            "Stealth",
+            "Reality Shift"
         ],
         "weapons": [
-            "Oceanic Trident"
+            "Neptunian Spear"
         ],
-        "moral_alignment": "True Neutral",
+        "moral_alignment": "Chaotic Evil",
         "partner": null,
         "relationships": [
             {
-                "name": "Junior",
+                "name": "Matias",
                 "type": "Friend"
             },
             {
                 "name": "Aarohi",
-                "type": "Enemy"
-            },
-            {
-                "name": "Isabel",
-                "type": "Friend"
-            },
-            {
-                "name": "Levi",
                 "type": "Have not met"
             },
             {
                 "name": "Castor",
-                "type": "Friend"
-            },
-            {
-                "name": "Matias",
-                "type": "Rival"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Friend"
-            },
-            {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
                 "type": "Have not met"
             },
             {
                 "name": "Emilio",
-                "type": "Rival"
-            }
-        ]
-    },
-    {
-        "name": "Castor",
-        "race": "Lunarians",
-        "subrace": "Dreamwalker",
-        "archetype": "Healer",
-        "stats": {
-            "height": 166,
-            "strength": 2,
-            "agility": 6,
-            "endurance": 10,
-            "aether": 16,
-            "wisdom": 8,
-            "intelligence": 4,
-            "charisma": 19,
-            "resistance": 11
-        },
-        "powers": [
-            "Dream Manipulation",
-            "Healing Light",
-            "Ice Manipulation"
-        ],
-        "weapons": [
-            "Hyperdecibel Boombox"
-        ],
-        "moral_alignment": "Lawful Good",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
+                "type": "Enemy"
             },
             {
-                "name": "Aarohi",
-                "type": "Have not met"
+                "name": "Iason",
+                "type": "Rival"
             },
             {
                 "name": "Isabel",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Friend"
-            },
-            {
-                "name": "Emilio",
-                "type": "Friend"
-            },
-            {
-                "name": "Matias",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Rival"
-            },
-            {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Friend"
-            }
-        ]
-    },
-    {
-        "name": "Emilio",
-        "race": "Jupitarians",
-        "subrace": "Noble",
-        "archetype": "None",
-        "stats": {
-            "height": 284,
-            "strength": 19,
-            "agility": 5,
-            "endurance": 5,
-            "aether": 6,
-            "wisdom": 15,
-            "intelligence": 10,
-            "charisma": 9,
-            "resistance": 6
-        },
-        "powers": [
-            "Bloodbending"
-        ],
-        "weapons": [
-            "Staff"
-        ],
-        "moral_alignment": "Lawful Evil",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Aarohi",
                 "type": "Close Friend"
-            },
-            {
-                "name": "Isabel",
-                "type": "Have not met"
             },
             {
                 "name": "Levi",
                 "type": "Have not met"
             },
             {
-                "name": "Castor",
-                "type": "Friend"
-            },
-            {
-                "name": "Matias",
-                "type": "Rival"
-            },
-            {
                 "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
                 "type": "Have not met"
             },
             {
@@ -568,156 +70,43 @@
                 "type": "Have not met"
             },
             {
-                "name": "Iason",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Haru",
-                "type": "Enemy"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
                 "name": "Ada",
-                "type": "Rival"
-            },
-            {
-                "name": "Junior",
-                "type": "Enemy"
-            },
-            {
-                "name": "Parichay",
-                "type": "Rival"
+                "type": "Have not met"
             }
         ]
     },
     {
         "name": "Matias",
-        "race": "Terrians",
-        "subrace": "Elven",
+        "race": "Venusians",
+        "subrace": "Amazon",
         "archetype": "None",
         "stats": {
-            "height": 144,
-            "strength": 1,
-            "agility": 12,
-            "endurance": 2,
-            "aether": 17,
-            "wisdom": 10,
-            "intelligence": 7,
-            "charisma": 3,
-            "resistance": 10
+            "height": 206,
+            "strength": 13,
+            "agility": 7,
+            "endurance": 8,
+            "aether": 8,
+            "wisdom": 6,
+            "intelligence": 4,
+            "charisma": 5,
+            "resistance": 15
         },
         "powers": [
             "Nature's Grace",
-            "Charge Attack",
-            "Ice Manipulation",
-            "Emotional Manipulation"
+            "Earth Manipulation"
         ],
         "weapons": [
-            "Moon Brush"
-        ],
-        "moral_alignment": "Chaotic Good",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
-            {
-                "name": "Aarohi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Isabel",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Levi",
-                "type": "Friend"
-            },
-            {
-                "name": "Parichay",
-                "type": "Rival"
-            },
-            {
-                "name": "Castor",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Rival"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Rival"
-            },
-            {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            }
-        ]
-    },
-    {
-        "name": "Mustafa",
-        "race": "Martians",
-        "subrace": "Android",
-        "archetype": "Tank",
-        "stats": {
-            "height": 163,
-            "strength": 17,
-            "agility": 12,
-            "endurance": 19,
-            "aether": 8,
-            "wisdom": 3,
-            "intelligence": 3,
-            "charisma": 13,
-            "resistance": 8
-        },
-        "powers": [
-            "Nature's Grace"
-        ],
-        "weapons": [
-            "Sword"
+            "Pistol"
         ],
         "moral_alignment": "Lawful Neutral",
         "partner": null,
         "relationships": [
             {
+                "name": "Junior",
+                "type": "Friend"
+            },
+            {
                 "name": "Aarohi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
                 "type": "Have not met"
             },
             {
@@ -726,420 +115,64 @@
             },
             {
                 "name": "Emilio",
-                "type": "Have not met"
-            },
-            {
-                "name": "Matias",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
+                "type": "Friend"
             },
             {
                 "name": "Iason",
                 "type": "Have not met"
             },
             {
-                "name": "Reyn",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
                 "name": "Isabel",
-                "type": "Rival"
+                "type": "Have not met"
             },
             {
-                "name": "Junior",
-                "type": "Rival"
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Have not met"
+            },
+            {
+                "name": "Toby",
+                "type": "Friend"
+            },
+            {
+                "name": "Ada",
+                "type": "Have not met"
             }
         ]
     },
     {
-        "name": "Toby",
-        "race": "Neptunians",
-        "subrace": "Swampwalker",
-        "archetype": "Tank",
+        "name": "Aarohi",
+        "race": "Venusians",
+        "subrace": "Cyclops",
+        "archetype": "Mage",
         "stats": {
-            "height": 230,
-            "strength": 17,
-            "agility": 4,
-            "endurance": 13,
-            "aether": 4,
+            "height": 291,
+            "strength": 15,
+            "agility": 3,
+            "endurance": 2,
+            "aether": 16,
             "wisdom": 7,
-            "intelligence": -2,
+            "intelligence": 12,
             "charisma": 15,
-            "resistance": 12
+            "resistance": 1
         },
         "powers": [
-            "Earth Manipulation",
-            "Hacking"
+            "Sound Manipulation",
+            "Sound Manipulation"
         ],
         "weapons": [
             "Glaive"
-        ],
-        "moral_alignment": "True Neutral",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
-            {
-                "name": "Isabel",
-                "type": "Friend"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Have not met"
-            },
-            {
-                "name": "Castor",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Have not met"
-            },
-            {
-                "name": "Matias",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Rival"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Friend"
-            },
-            {
-                "name": "Aarohi",
-                "type": "Friend"
-            }
-        ],
-        "agility": 2
-    },
-    {
-        "name": "Ada",
-        "race": "Plutonians",
-        "subrace": "Demon",
-        "archetype": "Mage",
-        "stats": {
-            "height": 164,
-            "strength": 16,
-            "agility": 15,
-            "endurance": 14,
-            "aether": 17,
-            "wisdom": 6,
-            "intelligence": 8,
-            "charisma": 6,
-            "resistance": 16
-        },
-        "powers": [
-            "Fire Manipulation",
-            "Shadow Manipulation",
-            "TikTok Dance",
-            "Testi Tortion",
-            "Water Manipulation"
-        ],
-        "weapons": [
-            "Sword"
-        ],
-        "moral_alignment": "Chaotic Evil",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
-            {
-                "name": "Aarohi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Isabel",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Have not met"
-            },
-            {
-                "name": "Castor",
-                "type": "Have not met"
-            },
-            {
-                "name": "Matias",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Rival"
-            }
-        ],
-        "wisdom": 1,
-        "strength": 1
-    },
-    {
-        "name": "Iason",
-        "race": "Terrians",
-        "subrace": "Human",
-        "archetype": "Rider",
-        "stats": {
-            "height": 238,
-            "strength": 13,
-            "agility": 8,
-            "endurance": 6,
-            "aether": 4,
-            "wisdom": 8,
-            "intelligence": 13,
-            "charisma": 17,
-            "resistance": 6
-        },
-        "powers": [
-            "Ice Manipulation",
-            "Flight",
-            "Emotional Manipulation",
-            "Nature's Grace"
-        ],
-        "weapons": [
-            "Volcanic Claws"
-        ],
-        "moral_alignment": "Chaotic Good",
-        "partner": "Ice Phoenix",
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Have not met"
-            },
-            {
-                "name": "Aarohi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Isabel",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Friend"
-            },
-            {
-                "name": "Castor",
-                "type": "Rival"
-            },
-            {
-                "name": "Emilio",
-                "type": "Have not met"
-            },
-            {
-                "name": "Matias",
-                "type": "Rival"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Have not met"
-            },
-            {
-                "name": "Toby",
-                "type": "Have not met"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            }
-        ]
-    },
-    {
-        "name": "Reyn",
-        "race": "Venusians",
-        "subrace": "Cinderwalker",
-        "archetype": "Tank",
-        "stats": {
-            "height": 235,
-            "strength": 11,
-            "agility": 1,
-            "endurance": 19,
-            "aether": 13,
-            "wisdom": 10,
-            "intelligence": 5,
-            "charisma": 5,
-            "resistance": 17
-        },
-        "powers": [
-            "Fire Manipulation",
-            "Enhanced Reflexes"
-        ],
-        "weapons": [
-            "Boomerang"
-        ],
-        "moral_alignment": "Chaotic Evil",
-        "partner": null,
-        "relationships": [
-            {
-                "name": "Junior",
-                "type": "Friend"
-            },
-            {
-                "name": "Aarohi",
-                "type": "Enemy"
-            },
-            {
-                "name": "Isabel",
-                "type": "Have not met"
-            },
-            {
-                "name": "Levi",
-                "type": "Have not met"
-            },
-            {
-                "name": "Parichay",
-                "type": "Have not met"
-            },
-            {
-                "name": "Castor",
-                "type": "Have not met"
-            },
-            {
-                "name": "Emilio",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Matias",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mustafa",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Ada",
-                "type": "Have not met"
-            },
-            {
-                "name": "Iason",
-                "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
-                "type": "Have not met"
-            },
-            {
-                "name": "Mert",
-                "type": "Friend"
-            },
-            {
-                "name": "Toby",
-                "type": "Friend"
-            }
-        ]
-    },
-    {
-        "name": "Haru",
-        "race": "Saturnians",
-        "subrace": "Lightyearian",
-        "archetype": "Healer",
-        "stats": {
-            "height": 189,
-            "strength": 5,
-            "agility": 17,
-            "endurance": 10,
-            "aether": 2,
-            "wisdom": 6,
-            "intelligence": 14,
-            "charisma": 2,
-            "resistance": 8
-        },
-        "powers": [
-            "Light Manipulation",
-            "Light Speed Travel",
-            "Healing Light",
-            "TikTok Dance",
-            "Bloodbending",
-            "Bloodbending"
-        ],
-        "weapons": [
-            "Chained Whip"
         ],
         "moral_alignment": "Neutral Evil",
         "partner": null,
@@ -1149,8 +182,20 @@
                 "type": "Have not met"
             },
             {
-                "name": "Aarohi",
-                "type": "Close Friend"
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Castor",
+                "type": "Rival"
+            },
+            {
+                "name": "Emilio",
+                "type": "Have not met"
+            },
+            {
+                "name": "Iason",
+                "type": "Have not met"
             },
             {
                 "name": "Isabel",
@@ -1161,7 +206,370 @@
                 "type": "Have not met"
             },
             {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
                 "name": "Parichay",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Reyn",
+                "type": "Have not met"
+            },
+            {
+                "name": "Toby",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Have not met"
+            }
+        ]
+    },
+    {
+        "name": "Castor",
+        "race": "Venusians",
+        "subrace": "Cinderwalker",
+        "archetype": "Warrior",
+        "stats": {
+            "height": 218,
+            "strength": 2,
+            "agility": 6,
+            "endurance": 8,
+            "aether": 4,
+            "wisdom": 10,
+            "intelligence": 4,
+            "charisma": 5,
+            "resistance": 2
+        },
+        "powers": [
+            "Fire Manipulation",
+            "Meme Mastery"
+        ],
+        "weapons": [
+            "Sword"
+        ],
+        "moral_alignment": "Neutral Evil",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Have not met"
+            },
+            {
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Rival"
+            },
+            {
+                "name": "Emilio",
+                "type": "Have not met"
+            },
+            {
+                "name": "Iason",
+                "type": "Friend"
+            },
+            {
+                "name": "Isabel",
+                "type": "Have not met"
+            },
+            {
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Toby",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Have not met"
+            }
+        ]
+    },
+    {
+        "name": "Emilio",
+        "race": "Tritonians",
+        "subrace": "Squid",
+        "archetype": "Warrior",
+        "stats": {
+            "height": 116,
+            "strength": 7,
+            "agility": 12,
+            "endurance": 12,
+            "aether": 6,
+            "wisdom": 17,
+            "intelligence": 13,
+            "charisma": 1,
+            "resistance": 9
+        },
+        "powers": [
+            "Ink Manipulation",
+            "Wind Manipulation"
+        ],
+        "weapons": [
+            "Glaive"
+        ],
+        "moral_alignment": "Chaotic Good",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Enemy"
+            },
+            {
+                "name": "Matias",
+                "type": "Friend"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Castor",
+                "type": "Have not met"
+            },
+            {
+                "name": "Iason",
+                "type": "Have not met"
+            },
+            {
+                "name": "Isabel",
+                "type": "Have not met"
+            },
+            {
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Have not met"
+            },
+            {
+                "name": "Toby",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Ada",
+                "type": "Rival"
+            }
+        ]
+    },
+    {
+        "name": "Iason",
+        "race": "Terrians",
+        "subrace": "Cloudstrider",
+        "archetype": "Warrior",
+        "stats": {
+            "height": 180,
+            "strength": 16,
+            "agility": 9,
+            "endurance": 3,
+            "aether": 3,
+            "wisdom": 12,
+            "intelligence": 1,
+            "charisma": 9,
+            "resistance": 14
+        },
+        "powers": [
+            "Storm Control",
+            "Brainrot Manipulation"
+        ],
+        "weapons": [
+            "Cloud Board"
+        ],
+        "moral_alignment": "Lawful Neutral",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Rival"
+            },
+            {
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Castor",
+                "type": "Friend"
+            },
+            {
+                "name": "Emilio",
+                "type": "Have not met"
+            },
+            {
+                "name": "Isabel",
+                "type": "Have not met"
+            },
+            {
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Have not met"
+            },
+            {
+                "name": "Toby",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Have not met"
+            }
+        ]
+    },
+    {
+        "name": "Isabel",
+        "race": "Saturnians",
+        "subrace": "Soundbreaker",
+        "archetype": "Wizard",
+        "stats": {
+            "height": 162,
+            "strength": 13,
+            "agility": 6,
+            "endurance": 7,
+            "aether": 7,
+            "wisdom": 15,
+            "intelligence": 14,
+            "charisma": 6,
+            "resistance": 14
+        },
+        "powers": [
+            "Sound Manipulation",
+            "Disposable limbs",
+            "Invisibility",
+            "Toxic Breath"
+        ],
+        "weapons": [
+            "Moon Brush"
+        ],
+        "moral_alignment": "Lawful Good",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Friend"
+            },
+            {
+                "name": "Castor",
+                "type": "Have not met"
+            },
+            {
+                "name": "Emilio",
+                "type": "Have not met"
+            },
+            {
+                "name": "Iason",
+                "type": "Have not met"
+            },
+            {
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Friend"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Friend"
+            },
+            {
+                "name": "Toby",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "name": "Levi",
+        "race": "Terrians",
+        "subrace": "Atlantean",
+        "archetype": "Mage",
+        "stats": {
+            "height": 130,
+            "strength": 8,
+            "agility": 11,
+            "endurance": 5,
+            "aether": 10,
+            "wisdom": 0,
+            "intelligence": 11,
+            "charisma": 14,
+            "resistance": 11
+        },
+        "powers": [
+            "Water Manipulation",
+            "Wall Climbing",
+            "Gravity Manipulation"
+        ],
+        "weapons": [
+            "Spear"
+        ],
+        "moral_alignment": "Chaotic Good",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Have not met"
+            },
+            {
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Aarohi",
                 "type": "Have not met"
             },
             {
@@ -1170,10 +578,14 @@
             },
             {
                 "name": "Emilio",
-                "type": "Enemy"
+                "type": "Have not met"
             },
             {
-                "name": "Matias",
+                "name": "Iason",
+                "type": "Have not met"
+            },
+            {
+                "name": "Isabel",
                 "type": "Have not met"
             },
             {
@@ -1181,48 +593,46 @@
                 "type": "Have not met"
             },
             {
-                "name": "Toby",
-                "type": "Rival"
-            },
-            {
-                "name": "Ada",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Iason",
-                "type": "Have not met"
+                "name": "Parichay",
+                "type": "Friend"
             },
             {
                 "name": "Reyn",
                 "type": "Have not met"
             },
             {
-                "name": "Mert",
+                "name": "Toby",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
                 "type": "Have not met"
             }
         ]
     },
     {
-        "name": "Mert",
-        "race": "Terrians",
-        "subrace": "Orc",
-        "archetype": "Tank",
+        "name": "Mustafa",
+        "race": "Saturnians",
+        "subrace": "Soundbreaker",
+        "archetype": "Cosmic Guardian",
         "stats": {
-            "height": 196,
+            "height": 126,
             "strength": 20,
-            "agility": 2,
-            "endurance": 10,
-            "aether": 14,
-            "wisdom": 15,
-            "intelligence": 5,
-            "charisma": 3,
-            "resistance": 10
+            "agility": 9,
+            "endurance": 12,
+            "aether": 3,
+            "wisdom": 9,
+            "intelligence": 12,
+            "charisma": 8,
+            "resistance": 9
         },
         "powers": [
-            "Illusions"
+            "Sound Manipulation",
+            "Final Form",
+            "Supernova"
         ],
         "weapons": [
-            "Axe"
+            "Volcanic Claws"
         ],
         "moral_alignment": "Lawful Evil",
         "partner": null,
@@ -1232,15 +642,11 @@
                 "type": "Have not met"
             },
             {
-                "name": "Aarohi",
-                "type": "Close Friend"
-            },
-            {
-                "name": "Isabel",
+                "name": "Matias",
                 "type": "Have not met"
             },
             {
-                "name": "Parichay",
+                "name": "Aarohi",
                 "type": "Have not met"
             },
             {
@@ -1252,12 +658,24 @@
                 "type": "Have not met"
             },
             {
-                "name": "Matias",
+                "name": "Iason",
                 "type": "Have not met"
             },
             {
-                "name": "Mustafa",
+                "name": "Isabel",
+                "type": "Friend"
+            },
+            {
+                "name": "Levi",
                 "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Enemy"
             },
             {
                 "name": "Toby",
@@ -1266,26 +684,309 @@
             {
                 "name": "Ada",
                 "type": "Have not met"
+            }
+        ]
+    },
+    {
+        "name": "Parichay",
+        "race": "Terrians",
+        "subrace": "Orc",
+        "archetype": "Healer",
+        "stats": {
+            "height": 244,
+            "strength": 13,
+            "agility": 2,
+            "endurance": 4,
+            "aether": 7,
+            "wisdom": 12,
+            "intelligence": 7,
+            "charisma": 9,
+            "resistance": 7
+        },
+        "powers": [
+            "Healing Light",
+            "Wall Climbing"
+        ],
+        "weapons": [
+            "Dagger"
+        ],
+        "moral_alignment": "True Neutral",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Have not met"
+            },
+            {
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Castor",
+                "type": "Have not met"
+            },
+            {
+                "name": "Emilio",
+                "type": "Have not met"
             },
             {
                 "name": "Iason",
                 "type": "Have not met"
             },
             {
-                "name": "Reyn",
+                "name": "Isabel",
                 "type": "Have not met"
-            },
-            {
-                "name": "Haru",
-                "type": "Have not met"
-            },
-            {
-                "name": "Reyn",
-                "type": "Friend"
             },
             {
                 "name": "Levi",
                 "type": "Friend"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Enemy"
+            },
+            {
+                "name": "Toby",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Close Friend"
+            }
+        ]
+    },
+    {
+        "name": "Reyn",
+        "race": "Neptunians",
+        "subrace": "Riverfolk",
+        "archetype": "Healer",
+        "stats": {
+            "height": 125,
+            "strength": 13,
+            "agility": 3,
+            "endurance": 5,
+            "aether": 16,
+            "wisdom": 10,
+            "intelligence": 15,
+            "charisma": 16,
+            "resistance": 12
+        },
+        "powers": [
+            "Healing Light",
+            "Brainrot Manipulation"
+        ],
+        "weapons": [
+            "Celestial Bow"
+        ],
+        "moral_alignment": "Chaotic Good",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Have not met"
+            },
+            {
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Castor",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Emilio",
+                "type": "Have not met"
+            },
+            {
+                "name": "Iason",
+                "type": "Have not met"
+            },
+            {
+                "name": "Isabel",
+                "type": "Friend"
+            },
+            {
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Enemy"
+            },
+            {
+                "name": "Parichay",
+                "type": "Enemy"
+            },
+            {
+                "name": "Toby",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Friend"
+            }
+        ]
+    },
+    {
+        "name": "Toby",
+        "race": "Terrians",
+        "subrace": "Orc",
+        "archetype": "Healer",
+        "stats": {
+            "height": 190,
+            "strength": 7,
+            "agility": 5,
+            "endurance": 17,
+            "aether": 11,
+            "wisdom": 17,
+            "intelligence": 2,
+            "charisma": 4,
+            "resistance": 9
+        },
+        "powers": [
+            "Healing Light",
+            "Ink Manipulation"
+        ],
+        "weapons": [
+            "Dagger"
+        ],
+        "moral_alignment": "Lawful Good",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Have not met"
+            },
+            {
+                "name": "Matias",
+                "type": "Friend"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Castor",
+                "type": "Have not met"
+            },
+            {
+                "name": "Emilio",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Iason",
+                "type": "Have not met"
+            },
+            {
+                "name": "Isabel",
+                "type": "Have not met"
+            },
+            {
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Have not met"
+            },
+            {
+                "name": "Reyn",
+                "type": "Have not met"
+            },
+            {
+                "name": "Ada",
+                "type": "Have not met"
+            }
+        ]
+    },
+    {
+        "name": "Ada",
+        "race": "Terrians",
+        "subrace": "Human",
+        "archetype": "Warrior",
+        "stats": {
+            "height": 189,
+            "strength": 8,
+            "agility": 7,
+            "endurance": 3,
+            "aether": 8,
+            "wisdom": 0,
+            "intelligence": 13,
+            "charisma": 1,
+            "resistance": 1
+        },
+        "powers": [
+            "Lightning Manipulation"
+        ],
+        "weapons": [
+            "Energy Bow"
+        ],
+        "moral_alignment": "Chaotic Neutral",
+        "partner": null,
+        "relationships": [
+            {
+                "name": "Junior",
+                "type": "Have not met"
+            },
+            {
+                "name": "Matias",
+                "type": "Have not met"
+            },
+            {
+                "name": "Aarohi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Castor",
+                "type": "Have not met"
+            },
+            {
+                "name": "Emilio",
+                "type": "Rival"
+            },
+            {
+                "name": "Iason",
+                "type": "Have not met"
+            },
+            {
+                "name": "Isabel",
+                "type": "Friend"
+            },
+            {
+                "name": "Levi",
+                "type": "Have not met"
+            },
+            {
+                "name": "Mustafa",
+                "type": "Have not met"
+            },
+            {
+                "name": "Parichay",
+                "type": "Close Friend"
+            },
+            {
+                "name": "Reyn",
+                "type": "Friend"
+            },
+            {
+                "name": "Toby",
+                "type": "Have not met"
             }
         ]
     }
