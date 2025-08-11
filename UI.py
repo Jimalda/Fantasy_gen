@@ -683,20 +683,45 @@ def apply_effects(char, effects, other_char=None):
             
 
     # Relationships
-    if "relationships" in effects and other_char:   
-        # We firstly delete the relationship
-        for rel in char.get("relationships", []):
-            if rel["name"] == other_char["name"]:
-                char["relationships"].remove(rel)
-                break
+    if "relationships" in effects and other_char:
+        char.setdefault("relationships", [])
+
         for rel in effects["relationships"]:
-            char.setdefault("relationships", []).append({
+            existing_rel = None
+            for r in char["relationships"]:
+                if r["name"] == other_char["name"]:
+                    existing_rel = r["type"]
+                    break
+
+            # Friend/Close Friend restriction
+            if rel["type"] in ["Friend", "Close Friend"]:
+                if existing_rel in ["Friend", "Close Friend"]:
+                    message+=f"{char['name']}'s relationships: already has a friendly relationship with {other_char['name']}.\n"
+                    continue  # Already friendly, skip adding
+                
+
+            # Rival restriction
+            if rel["type"] == "Rival":
+                if existing_rel in ["Rival", "Enemy"]:
+                    message+=f"{char['name']}'s relationships: already has a rival or enemy relationship with {other_char['name']}.\n"
+                    continue  # Already bad, skip adding
+
+            # Enemy restriction
+            if rel["type"] == "Enemy":
+                if existing_rel == "Enemy":
+                    message+=f"{char['name']}'s relationships: already has an enemy relationship with {other_char['name']}.\n"
+                    continue  # Already enemy, skip adding
+
+            # If no restriction blocks it, set/update relationship
+            # Remove old entry if exists
+            char["relationships"] = [r for r in char["relationships"] if r["name"] != other_char["name"]]
+            # Add new one
+            char["relationships"].append({
                 "name": other_char["name"],
                 "type": rel["type"]
-        }
-        )
-        new_relationship=rel["type"]
-        message+=f"{char['name']}'s relationships: has gotten the relationship: {new_relationship}.\n"
+            })
+
+            message+=f"{char['name']}'s relationships: has gotten the relationship: {rel['type']}.\n"
     # Clear all relationships
     if effects.get("clear_relationships"):
         # We make all relationship values are equal to not met
